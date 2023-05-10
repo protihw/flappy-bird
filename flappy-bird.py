@@ -2,13 +2,12 @@ import pygame
 import random
 
 nuvem = Actor("nuvem")
+bird = Actor("bird")
 points = 0
 
 # BIRD
 bird_x = 62
 bird_y = 200
-bird_width = 30
-bird_heigth = 25
 bird_y_speed = 0
 
 # TELA
@@ -50,7 +49,9 @@ def draw():
     nuvem.pos = ((cloud_x_2, 150))
     nuvem.draw()
 
-    screen.draw.filled_rect(Rect((bird_x, bird_y), (bird_width, bird_heigth)), color=(247, 217, 23))
+    bird.pos = ((bird_x, bird_y))
+    bird.draw()
+
 
     draw_pipe(pipe_x, pipe_width, pipe_space_y, pipe_space_height)
     draw_pipe(pipe_x2, pipe_width, pipe2_space_y, pipe_space_height)
