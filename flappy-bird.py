@@ -60,7 +60,7 @@ def draw():
 
     if game_over is True:
         screen.draw.filled_rect(Rect((0, 0), (playing_area_width, playing_area_height)), color=(0, 0, 0))
-        screen.draw.text('PRENSADO!', (155, 175))
+        screen.draw.text('PRENSADO!', (150, 175))
 
 
 def on_key_down():
