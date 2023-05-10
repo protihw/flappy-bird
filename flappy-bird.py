@@ -34,6 +34,10 @@ cloud_x_2 = 315
 game_over = False
 color = (35, 92, 118)
 
+#music
+music.play('song')
+music.set_volume(0.1)
+
 
 def draw():
     screen.fill((0, 0, 0))
@@ -55,7 +59,7 @@ def draw():
 
     if game_over is True:
         screen.draw.filled_rect(Rect((0, 0), (playing_area_width, playing_area_height)), color=(0, 0, 0))
-        screen.draw.text('VOCÊ PERDEU!', (155, 175))
+        screen.draw.text('PRENSADO!', (155, 175))
 
 
 def on_key_down():
@@ -100,16 +104,21 @@ def update(dt):
     # BIRD
     if bird_y > 430:
         game_over = True
+        music.stop()
     elif bird_y < -30:
         game_over = True
+        music.stop()
+
     elif pipe_x == bird_x:
         if round(bird_y) <= pipe_space_y or round(bird_y) >= pipe_space_y + 100:
             game_over = True
+            music.stop()
         else:
             points += 1
     elif pipe_x2 == bird_x:
         if round(bird_y) <= pipe2_space_y or round(bird_y) >= pipe2_space_y + 100:
             game_over = True
+            music.stop()
         else:
             points += 1
 
